@@ -15,7 +15,7 @@ after_success:
   - docker build -t betancourtluis/multi-nginx ./nginx
   - docker build -t betancourtluis/multi-server ./server
   - docker build -t betancourtluis/multi-worker ./worker
-  - echo "${DOCKER_PASSWORD} | docker login -u ${DOCKER_ID}" --password-stdin
+  - echo "${DOCKER_PASSWORD}" | docker login -u ${DOCKER_ID} --password-stdin
   - docker push betancourtluis/multi-client
   - docker push betancourtluis/multi-nginx
   - docker push betancourtluis/multi-server
